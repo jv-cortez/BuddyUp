@@ -34,7 +34,7 @@ nav {
   }
 // card swipe styles  
 .master-root {
-  margin: 20px auto;
+  // margin: 20px auto;
   height: 50px;
   position: relative;
   min-height: 400px;
@@ -119,14 +119,15 @@ nav {
   margin-left: 50%;
   }
 
-  .alert-bottom {
+.alert-bottom {
   bottom: 0;
   background: blue;
   border-top-left-radius: 50px;
   border-radius: 50px;
   transform: translate(-50%, 0);
   margin-left: 50%;
-  }
+
+}
 
 //css style for pop up box
 

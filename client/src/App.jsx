@@ -35,7 +35,6 @@ class App extends Component {
   }
 }
 
-
 function mapStateToProps(state) {
   return {
     auth: state.auth

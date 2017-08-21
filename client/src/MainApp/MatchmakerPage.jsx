@@ -83,8 +83,12 @@ class MatchmakerPage extends Component {
         throw new Error(msg.data.type);
       })
       .on('getDefaultSeriousness', function(seriousness){
+        if (seriousness === null) {
+          c.updateDefaultValue === 50
+        } else {
         console.log(JSON.parse(seriousness));
         c.updateDefaultValue(JSON.parse(seriousness));
+        }
       })
       .on('onlinematchedSeriousnessUserIds', function(users) {
         c.updateCompat(JSON.parse(users));

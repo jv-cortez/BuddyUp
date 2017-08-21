@@ -12,24 +12,24 @@ class MatchmakerEvent extends Component {
         <Cards onEnd={() => console.log('end')} className='master-root'>
           { 
             data.map(item =>
-                                   //make card and card border bigger
-                                   //make sure it's mobile responsive
-                                   <Card
-                                     onSwipeLeft={() => console.log('reject ' + item.username)}
-                                     onSwipeRight={() => {
-                                      console.log('accept ' + item.username);
-                                      this.props.inviteUserB(item);
-                                     }}>
-                                     <h2>{item.username}</h2>
-                                     <img className="avatar" src={item.imageurl} alt="avatar image"/> 
-                                     <p className="card-text-description">{item.tagline}</p>
-                                     <p className="card-text-description">{item.blurb}</p>
-                                   </Card>
-                                   )}
+              //make card and card border bigger
+              //make sure it's mobile responsive
+              <Card
+                onSwipeLeft={() => console.log('reject ' + item.username)}
+                onSwipeRight={() => {
+                console.log('accept ' + item.username);
+                this.props.inviteUserB(item);
+                }}>
+                <h2>{item.username}</h2>
+                <img className="avatar" src={item.imageurl} alt="avatar image"/> 
+                <p className="card-text-description">{item.tagline}</p>
+                <p className="card-text-description">{item.blurb}</p>
+              </Card>
+              )}
         </Cards>
       </div>
     )
   }
 }
 
-export default MatchmakerEvent
+export default MatchmakerEvent;

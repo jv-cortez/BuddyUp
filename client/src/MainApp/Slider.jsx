@@ -28,37 +28,36 @@ class Slider extends Component {
   }
 
   render () {
-    
-        const handle = (props) => {
-          const { value, dragging, index, ...restProps } = props;
-          return (
-            <Tooltip
-              prefixCls="rc-slider-tooltip"
-              overlay={value}
-              visible={dragging}
-              placement="top"
-              key={index}
-            >
-              <Handle value={value} {...restProps} />
-            </Tooltip>
-          );
-        };
-    
-        const wrapperStyle = { width: 400, margin: 50 };
-        return(
-          <div>
-            <div style={wrapperStyle}>
-              <p>Please slide according to your seriousness</p>
-              <p>{this.props.sliderDefaultValue}</p>
-              <RCSlider min={0} max={100} value={this.props.sliderDefaultValue} handle={handle} 
-              onChange={this.onSliderChange}
-              />
-    
-            </div>
-          </div>
-    
-        );
-      }
+    const handle = (props) => {
+      const { value, dragging, index, ...restProps } = props;
+      return (
+        <Tooltip
+          prefixCls="rc-slider-tooltip"
+          overlay={value}
+          visible={dragging}
+          placement="top"
+          key={index}
+        >
+          <Handle value={value} {...restProps} />
+        </Tooltip>
+      );
+    };
+
+    const wrapperStyle = { width: 400, margin: 50 };
+    return(
+      <div>
+        <div style={wrapperStyle}>
+          <p>Please slide according to your seriousness</p>
+          <p>{this.props.sliderDefaultValue}</p>
+          <RCSlider min={0} max={100} value={this.props.sliderDefaultValue} handle={handle} 
+          onChange={this.onSliderChange}
+          />
+
+        </div>
+      </div>
+
+    );
+  }
 }
 
 export default Slider;

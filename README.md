@@ -3,6 +3,11 @@
 ## Description
 A smarter auto-match system for DOTA2 players.
 
+## Screenshots
+["match making page"](https://github.com/jv-cortez/BuddyUp/blob/master/docs/matchmakingPage.png)
+["Invitation from match page"](https://github.com/jv-cortez/BuddyUp/blob/master/docs/matched.png)
+["chat feature"](https://github.com/jv-cortez/BuddyUp/blob/master/docs/chat.png)
+
 ## Getting Started
 
 ### Server side

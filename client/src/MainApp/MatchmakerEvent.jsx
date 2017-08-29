@@ -13,13 +13,13 @@ class MatchmakerEvent extends Component {
               onSwipeRight={() => {
                 console.log('accept ' + item.username);
                 this.props.inviteUserB(item);
-              }}>
-              <h2>{item.username}</h2>
-              <img className="avatar" src={item.imageurl} alt="avatar image" />
-              <p className="card-text-description">{item.tagline}</p>
-              <p className="card-text-description">{item.blurb}</p>
-            </Card>
-          )}
+               }}>
+               <h2>{item.username}</h2>
+               <img className="avatar" src={ 'https://api.adorable.io/avatars/285/' + item.username + '@adorable.io.png' } alt="avatar image"/>
+               <p className="card-text-description">{item.tagline}</p>
+               <p className="card-text-description">{item.blurb}</p>
+             </Card>
+           )}
         </Cards>
       </div>
     )

@@ -13,12 +13,12 @@ class MatchmakerPage extends Component {
     super(props);
     this.state = {
       compatUsers: [],
-      defaultValue: 50,
+      defaultValue: 4000,
       currentUserName: '',
       ownUserName: this.props.auth.user.username,
       messages: [],
       showChat: false,
-      roomName: '',
+      roomName: ''
     };
     this.updateCompat = this.updateCompat.bind(this);
     this.updateDefaultValue = this.updateDefaultValue.bind(this);
@@ -33,18 +33,28 @@ class MatchmakerPage extends Component {
   openPopupbox(senderData, receiverData) {
     const content = (
       <div>
-        <div>
-          {senderData.username + senderData.blurb + senderData.tagline}
+        <div className="notif-avatar-div">
+          <img className="notif-avatar" src={"https://api.adorable.io/avatars/285/" + senderData.username + "@adorable.io.png"} /> 
         </div>
+        <div className="notif-username">
+          {senderData.username}
+        </div>
+        <div className="notif-tagline">
+          {senderData.tagline}
+        </div>
+        <br/>
         <div>
-          <button onClick={(event) => { this.acceptInvitation(senderData, receiverData); this.closePopupBox() }}>Accept</button>
-          <button onClick={this.closePopupBox()}>Decline</button>
+          {senderData.blurb}
+        </div>
+        <br/>
+        <div className="notif-btn">
+          <button className="btn btn-lg" onClick={(event) => { this.acceptInvitation(senderData, receiverData); this.closePopupBox() }}>Accept</button>
+          <button className="btn btn-lg" onClick={(event) => { this.closePopupBox() }}>Decline</button>
         </div>
       </div>
     )
     PopupboxManager.open({ content })
   }
-
   closePopupBox() {
     PopupboxManager.close()
   }
@@ -100,10 +110,10 @@ class MatchmakerPage extends Component {
       currentUserName: username
     })
   }
-  
+
   componentDidMount() {
     this.socket = io.connect('http://localhost:3001');
-    
+
     var c = this;
     this.socket.on("connect", () => {
       console.log("Connected!");
@@ -145,14 +155,13 @@ class MatchmakerPage extends Component {
             c.setState({ showChat: true });
           }
         })
-        .on('disconnect', function () {
-          this.socket.emit('disconnect');
-        })
     });
   }
 
   componentWillUnmount() {
-    this.socket.emit('disconnect');
+    if(this.socket){
+      this.socket.disconnect();
+    }
   }
 
   updateUserSeriousness(value) {
@@ -172,12 +181,12 @@ class MatchmakerPage extends Component {
         </div>
         <div className="matchmakerEventAndChat-container">
           <div>
-            <MatchmakerEvent compatUsers={this.state.compatUsers} inviteUserB={this.inviteUserB} />
+            <MatchmakerEvent compatUsers={this.state.compatUsers} inviteUserB = {this.inviteUserB} ownUserName={this.state.ownUserName}/>
           </div>
           {this.state.showChat &&
-            <div>
-              <PopupChat newPost={this.newPost} ownUownUserName={this.state.ownUserName} messages={this.state.messages} />
-            </div>}
+          <div>
+            <PopupChat newPost={this.newPost} ownUownUserName={this.state.ownUserName} messages={this.state.messages} />
+          </div>}
         </div>
         <PopupboxContainer />
       </div>

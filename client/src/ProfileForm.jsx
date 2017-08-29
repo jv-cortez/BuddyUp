@@ -36,28 +36,42 @@ class ProfileForm extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <form onSubmit={this.onSubmit}>
-        <h1>Update Profileeeee</h1>
+      <div id="page-top" className="page-top" data-spy="scroll" data-target=".navbar-custom">
+        <section id="profile" className="profile">
+          <div>
+            <img className="backgroundimg" src="/profilepage.jpg"/>
+            <div id="snow"></div>
+          </div>
+          <div className="formdiv">
+            <div className="text-center" className="form">
+              <form onSubmit={this.onSubmit}>
+                <h1>Profile Update</h1>
+                  <TextFieldGroup
+                    label="Tagline"
+                    onChange={this.onChange}
+                    value={this.state.tagline} 
+                    maxlength="30"
+                    field="tagline"
+                    placeholder="30 characters or less"
+                  />
+                  <TextFieldGroup
+                    label="Blurb"
+                    onChange={this.onChange}
+                    value={this.state.blurb}
+                    field="blurb"
+                    placeholder="200 characters or less"
+                  />          
 
-        <TextFieldGroup
-          label="Tagline"
-          onChange={this.onChange}
-          value={this.state.tagline}
-          field="tagline"
-        />
-        <TextFieldGroup
-          label="Blurb"
-          onChange={this.onChange}
-          value={this.state.blurb}
-          field="blurb"
-        />
-
-        <div className="form-group">
-          <button disabled={this.state.isLoading} className="btn btn-primary btn-lg">
-            Update Profile
-            </button>
-        </div>
-      </form>
+                  <div className="form-group">
+                    <button disabled={this.state.isLoading} className="btn btn-primary btn-lg">
+                      Update Profile
+                    </button>
+                  </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </div>
     )
   }
 }

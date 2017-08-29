@@ -3,7 +3,7 @@ import LoginForm from './LoginForm.jsx';
 
 
 class LoginPage extends Component {
-  render () {
+  render() {
     return (
       <div className="row">
         <div>

@@ -47,6 +47,6 @@ const Root = () => (
 )
 
 ReactDOM.render(
-  <Root />, 
+  <Root />,
   document.getElementById('react-root')
 );

@@ -13,8 +13,7 @@ export function currentUserDataRequest() {
 export function userUpdateProfile(userProfileData) {
   return dispatch => {
     return axios.post('/api/profileupdate', userProfileData).then(res => {
-      console.log('outcoming data' + res.data);
-        return res.data;
+      return res.data;
     });
   }
 }

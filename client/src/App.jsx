@@ -15,21 +15,33 @@ class App extends Component {
     super(props);
     this.state = {
       loginPage: [],
-      uploadScreen: []
+      uploadScreen: [],
+      isLoading: true
     }
+  }
+
+  componentDidMount() {
+    this.setState({ isLoading: false }
+    )
   }
 
   render() {
     const { isAuthenticated } = this.props.auth;
     return (
-      <div className="container">
-        <NavigationBar />
-        <Route exact path="/" component={Greetings} />
-        <Route path="/signup" component={SignupPage} />
-        <Route path="/login" component={LoginPage} />
-        <Route path="/profile" component={ProfilePage} />
-        <Route path="/matchmaker" render={() => ( isAuthenticated ? <MatchmakerPage/> : <Redirect to="/"/> )} />
-        <Route path="/profileupdate" component={ProfileForm} />
+      <div>
+        {this.state.isLoading ?
+          <div id="preloader">
+            <div id="load"></div>
+          </div> :
+          <div className="container">
+            <NavigationBar />
+            <Route exact path="/" component={Greetings} />
+            <Route path="/signup" component={SignupPage} />
+            <Route path="/login" component={LoginPage} />
+            <Route path="/profile" component={ProfilePage} />
+            <Route path="/matchmaker" render={() => (isAuthenticated ? <MatchmakerPage /> : <Redirect to="/" />)} />
+            <Route path="/profileupdate" component={ProfileForm} />
+          </div>}
       </div>
     );
   }

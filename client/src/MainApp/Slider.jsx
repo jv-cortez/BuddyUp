@@ -17,7 +17,6 @@ class Slider extends Component {
   }
 
   onSliderChange = (value) => {
-    console.log(value);
     this.setState({
       value,
     }, () => this.props.onSliderUpdate(value));
@@ -28,7 +27,6 @@ class Slider extends Component {
   }
 
   render () {
-    
         const handle = (props) => {
           const { value, dragging, index, ...restProps } = props;
           return (
@@ -54,7 +52,6 @@ class Slider extends Component {
               />
             </div>
           </div>
-    
         );
       }
 }

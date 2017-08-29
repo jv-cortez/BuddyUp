@@ -1,39 +1,4 @@
-// $brand-color: tomato;
-
-// body{
-//   background: white;
-//   margin: 0;
-// }
-// h1, h2 {
-//   color: $brand-color;
-//   display: flex;
-//   justify-content: center;
-// }
-// //navbar and dropdown styles
-// nav {
-//   background: peachpuff;
-//   display: flex;
-//   justify-content: space-between;
-//   padding: 10px;
-// }
-//   .title {
-//     margin: 0;
-//   }
-
-
-//   .dropdown {
-//     margin: 0;
-//   }
-
-//   .navbar, .navbar-default{
-//     display: block;
-//   }
-  .nav, .navbar-nav, .navbar-right:hover {
-    color: lightgrey;
-    cursor: pointer;
-  }
-  
-  .caret {
+.caret {
     display: none;
   }
 // card swipe styles
@@ -55,20 +20,37 @@
 }
 
   .card {
-  background: peachpuff;
-  background-size: cover;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  cursor: pointer;
-  height: 300px;
-  text-align: center;
-  margin: 0 auto;
-  position: absolute;
-  transition: box-shadow .3s;
-  width: 180px;
+    background: rgb(0,0,0);
+    background-size: cover;
+    border: 2px solid rgb(255,255,255);
+    border-radius: 2px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    color: white;
+    cursor: pointer;
+    height: 100%;
+    margin: 0 auto;
+    padding: 30px;
+    position: absolute;
+    text-align: center;
+    transition: box-shadow .3s;
+    width: 100%;
 }
 
 .card:hover {
-  background: khaki;
+  background: rgb(168, 169, 176);
+}
+
+.card h2 {
+  word-wrap: break-word;
+}
+
+.card p {
+  font-size: 1.25em;
+}
+
+.card img {
+  height: 150px;
+  width: 150px;
 }
 
 .card-text-description {
@@ -171,7 +153,8 @@
 }
 
 .popupbox-content {
-  overflow: hidden;
+  overflow: auto;
+  text-align: center;
 }
 
 .popupbox-wrapper {
@@ -214,8 +197,12 @@
 }
 
 .popupbox-content {
-  height: 300px;
+  height: 450px;
+  width: 350px;
   padding: 20px 24px 30px;
+  background: #3e4444;
+  color: white;
+  font-size: 1.25em;
 }
 
 .popupbox-titleBar {
@@ -244,6 +231,30 @@
 .popupbox.is-active {
   opacity: 1;
   pointer-events: auto;
+}
+
+.notif-username {
+  font-size: 2em;
+}
+
+.notif-tagline {
+  font-size: 15px;
+}
+
+.notif-avatar-div {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.notif-avatar {
+  height: 150px;
+  width: 150px;
+}
+
+.notif-btn {
+ text-align: center;
+ display: flex;
+ justify-content: space-evenly;
 }
 
 .popupbox[data-title='bottom'] .popupbox-content { box-shadow: 0 1px 1px rgba(0, 0, 0, .3) }

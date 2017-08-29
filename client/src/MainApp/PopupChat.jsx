@@ -13,7 +13,7 @@ class PopupChat extends Component {
     }
     this.onChange = this.onChange.bind(this);
   }
-  
+
   toggleHiddenChat = () => {
     this.setState({ showHiddenChat: !this.state.showHiddenChat })
   }
@@ -34,6 +34,7 @@ class PopupChat extends Component {
 
   render() {
     const messageList = this.props.messages.map((message) => {
+
           return (<div key={message.id} className="message">
             <span >{message.username}: {message.content}</span>
           </div>);

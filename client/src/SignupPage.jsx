@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 
 class SignupPage extends Component {
-  render () {
+  render() {
     const { userSignupRequest } = this.props;
     return (
       <div className="row">

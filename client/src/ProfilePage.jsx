@@ -4,7 +4,7 @@ import ProfileForm from './ProfileForm.jsx';
 
 
 class ProfilePage extends Component {
-  render () {
+  render() {
     return (
       <div>
         <Profile />

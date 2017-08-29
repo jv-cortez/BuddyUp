@@ -20,7 +20,6 @@ router.post('/', (req, res) => {
           id: user.get('id'),
           username: user.get('username')
         }, process.env.JWT_SECRET);
-        console.log('IS THIS DA TOKEN?', token)
         res.json({ token })
       } else {
         res.status(401).json({ errors: { form: 'Invalid Credentials' } })

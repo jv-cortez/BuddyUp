@@ -19,7 +19,7 @@ class SignupForm extends Component {
     }
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    
+
   }
 
   onChange(e) {
@@ -29,23 +29,23 @@ class SignupForm extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    this.setState({ errors:{}, isLoading: true });
+    this.setState({ errors: {}, isLoading: true });
     this.props.userSignupRequest(this.state).then(
       () => {
         this.context.router.history.push('/profileupdate');
-        window.location.reload();        
+        window.location.reload();
       },
-      ({ data }) => this.setState({ errors:data, isLoading: false })
+      ({ data }) => this.setState({ errors: data, isLoading: false })
     );
   }
 
-  render () {
+  render() {
     const { errors } = this.state;
     return (
       <div id="page-top" className="page-top" data-spy="scroll" data-target=".navbar-custom">
         <section id="signup" className="signup">
           <div>
-            <video autoPlay loop muted src="/signupVid.mp4"/>
+            <video autoPlay loop muted src="/signupVid.mp4" />
           </div>
           <div className="formdiv">
             <form onSubmit={this.onSubmit}>
@@ -64,7 +64,7 @@ class SignupForm extends Component {
                 onChange={this.onChange}
                 value={this.state.email}
                 field="email"
-              />          
+              />
               <TextFieldGroup
                 error={errors.password}
                 label="Password"
@@ -85,10 +85,10 @@ class SignupForm extends Component {
               <div className="form-group">
                 <button disabled={this.state.isLoading} className="btn btn-primary btn-lg">Sign Up</button>
               </div>
-          </form>
-        </div>
-      </section>
-    </div>
+            </form>
+          </div>
+        </section>
+      </div>
     )
   }
 }

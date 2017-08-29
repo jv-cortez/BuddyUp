@@ -7,7 +7,7 @@ const initialState = {
 };
 
 export default (state = initialState, action = {}) => {
-  switch(action.type) {
+  switch (action.type) {
     case set_current_user:
       return {
         isAuthenticated: !isEmpty(action.user),

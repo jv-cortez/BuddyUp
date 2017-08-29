@@ -51,7 +51,6 @@ router.post('/', (req, res) => {
         id: user.attributes.id,
         username: user.attributes.username
       }, process.env.JWT_SECRET);
-      console.log('IS THIS DA TOKEN?', token);
       res.json({ token });
     })
     .catch(err => res.status(500).json({ error: err }));

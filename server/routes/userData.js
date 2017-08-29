@@ -6,7 +6,6 @@ const jwt = require('jsonwebtoken');
 let router = express.Router();
 
 router.get('/', (req, res) => {
-  console.log('get request received')
   let token = req.headers.authorization.split(' ')[1]
   jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
     if (err) {
@@ -19,5 +18,5 @@ router.get('/', (req, res) => {
     }
   })
 });
-module.exports = router;
 
+module.exports = router;

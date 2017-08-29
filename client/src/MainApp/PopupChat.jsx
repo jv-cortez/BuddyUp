@@ -17,13 +17,19 @@ class PopupChat extends Component {
   toggleHiddenChat = () => {
     this.setState({ showHiddenChat: !this.state.showHiddenChat })
   }
-
+  
   componentDidMount() {
     console.log("PopupChat component mounted");
   }
-
+  
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
+  }
+  
+  componentDidUpdate() {
+    const element = document.getElementById('newMessage');
+    element.scrollTop = element.scrollHeight;
+    event.preventDefault();
   }
 
   render() {
@@ -36,7 +42,7 @@ class PopupChat extends Component {
     return (
       <div className={className}>
         <p className="chatheaderClicked" onClick={ this.toggleHiddenChat }>Chat</p>
-        <div className="message">{ messageList }</div>
+        <div className="message" id="newMessage">{ messageList }</div>
           <input
             name="input"
             id="chatbar"
@@ -45,8 +51,6 @@ class PopupChat extends Component {
             onKeyDown={ (event) => {
               if (event.key === 'Enter') {
                 this.props.newPost(this.state.input);
-                const element = document.getElementsByClassName('message');
-                element.scrollIntoView(false);
               }
             }}
           />

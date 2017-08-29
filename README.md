@@ -1,7 +1,7 @@
 # BuddyUp
 
 ## Description
-A smarter auto-match system for DOTA2 players.
+A smarter auto-match system web app for DOTA2 players. Built mainly with React.js, express, and socket.io. Features include real-time search based on "seriousness" level, if you are gaming casually or competitively, customizable profile, and private chatting feature. This app is catered towards those looking for a quicker and more custoizable search for people with the same skills and goals for your gaming session.
 
 ## Screenshots
 !["match making page"](https://github.com/jv-cortez/BuddyUp/blob/master/docs/matchmakingPage.png)
